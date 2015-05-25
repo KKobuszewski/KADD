@@ -65,14 +65,14 @@ void histogramy_2D() {
    
    
    c1->cd(3);
-   TH1D* hProjX= h2->ProjectionX();
+   TH1D* hProjX= h2Dist->ProjectionX();
    hProjX->GetXaxis()->SetTitle("X");
    hProjX->GetYaxis()->SetTitle("Y");
    hProjX->SetTitle("Gestosc brzegowa g(x)");
    hProjX->Draw();
    
    c1->cd(4);
-   TH1D* hProjY= h2->ProjectionY();
+   TH1D* hProjY= h2Dist->ProjectionY();
    hProjY->GetXaxis()->SetTitle("X");
    hProjY->GetYaxis()->SetTitle("Y");
    hProjY->SetTitle("Gestosc brzegowa h(y)");

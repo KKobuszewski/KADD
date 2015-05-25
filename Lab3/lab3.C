@@ -4,11 +4,11 @@
 
 
 void lab3(){
-    gStyle->SetOptStat(0);
+    //gStyle->SetOptStat(0);
     std::fstream plik;
     plik.open( "NumericalRecipes.txt", std::ios::in | std::ios::out );
     
-    TH2D* widmo = new TH2D("widmo","Rozklad widmowy generatora",100,0.,1.,100,0.,1.);//histogram 2D na obszarze (0;1)x(0;1)
+    TH2D* widmo = new TH2D("widmo","Rozklad widmowy generatora",1000,0.,1.,1000,0.,1.);//histogram 2D na obszarze (0;1)x(0;1)
     
     //Zczytywanie danych i wypelnienie histogramu
     Double_t value = 0.;

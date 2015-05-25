@@ -9,9 +9,9 @@
 using namespace std;
 
 
-int generator()
+int blumblumshub()
 {
-   long long x=2,m=pow(2,32),a=1664525,c=1013904223,n=100000;
+   long long x=2346858,m=991*997,a=1664525,c=1013904223,n=100000;
    cout<<m<<endl; 
    /*cout<<"Podaj N"<<endl;
    cin>>n;
@@ -39,7 +39,7 @@ int generator()
    Int_t g=0;
    fscanf(wyjscie,"%d",&g);*/
    
-   long* random_numbers = new long[n+1];
+   long long* random_numbers = new long long[n+1];
    //Int_t random_numbers[n+1];
    int ii = 0;
    random_numbers[0] = x;
@@ -47,7 +47,8 @@ int generator()
    do {
      ii++;
      //printf("%d\n",random_numbers[ii]);
-     random_numbers[ii] = (a*random_numbers[ii-1] + c)%m);
+     //printf("%d\n",m);
+     random_numbers[ii] = (random_numbers[ii-1]*random_numbers[ii-1])%m;
      //printf("%d\n",random_numbers[ii]);
    } while(ii<n);
    
