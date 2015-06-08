@@ -70,6 +70,8 @@ void Lab10(){
    legend->Draw("same");
 }
 
+
+
 Double_t linear_lsq_polynomial_fit(
   Int_t r, /*Stopien wielomianu*/
   Int_t n, /*Ilosc pomiarow*/
@@ -161,7 +163,7 @@ Double_t linear_lsq_polynomial_fit(
   error_vec = c_vec - eta_vec;
   Double_t residual_sum = 0.;
   residual_sum = (Double_t) TMatrixD(error_vec,TMatrixD::kTransposeMult,TMatrixD(Gy_mat,TMatrixD::kMult,error_vec)) (0,0);
-  TMatrixD(error_vec,TMatrixD::kTransposeMult,TMatrixD(Gy_mat,TMatrixD::kMult,error_vec)).Print();
+  TMatrixD(error_vec,TMatrixD::kTransposeMult,TMatrixD(Gy_mat,TMatrixD::kMult,error_vec));//.Print();
   
   cout<<"Fitted coefficients"<<endl;
   for (int jj = 0; jj <= r; jj++){

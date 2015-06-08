@@ -24,7 +24,7 @@ void lab8_1(){
   h3 = (TH1D*) pions->Get("denp");
   h4 = (TH1D*) pions->Get("denn");
   
-  
+  pions->Close();
   
   c1->cd(1);
   TH1D* numerator;
@@ -95,6 +95,7 @@ void lab8_1(){
   numerator->Write();
   denominator->Write();
   corr->Write();
+  newfile->Close();
   
   c1->SaveAs("plik.pdf");
   

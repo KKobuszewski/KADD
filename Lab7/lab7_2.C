@@ -13,13 +13,9 @@ void lab7_2(){
   c1->cd(1);
   Double_t xmin = -8.;
   Double_t xmax = 8.;
-  
-  //c1->SetLogy();
-  
+    
   TH1D* h1 = new TH1D("h1","Histogram rozkladu prawdopodobienstwa",100,xmin,xmax);
-  
-  //TF1* gauss;
-  
+    
   for (int ii=0; ii< 100000; ii++){
       Double_t suma = 0.;
       suma = (8*gRandom->Uniform()-5)+(8*gRandom->Uniform()-3);
@@ -28,10 +24,8 @@ void lab7_2(){
   h1->Sumw2();
   h1->Fit("gaus");
   h1->Draw();
-  //TF1 f1 = h1->GetFunction("gaus");
   cout<<"Nie dziala"<<endl;
-  
-  
+    
   
   // B)
   
@@ -39,11 +33,7 @@ void lab7_2(){
   Double_t xmin = -10.;
   Double_t xmax = 10.;
   
-  //c1->SetLogy();
-  
   TH1D* h2 = new TH1D("h2","Histogram rozkladu prawdopodobienstwa",100,xmin,xmax);
-  
-  //TF1* gauss;
   
   for (int ii=0; ii< 100000; ii++){
       Double_t suma = 0.;
@@ -53,11 +43,7 @@ void lab7_2(){
   h2->Sumw2();
   h2->Fit("gaus");
   h2->Draw();
-  //TF1 f2 = h2->GetFunction("gaus");
-  
-  
-  
-  
+    
   
   // C)
   
@@ -65,11 +51,7 @@ void lab7_2(){
   Double_t xmin = -20.;
   Double_t xmax = 20.;
   
-  //c1->SetLogy();
-  
   TH1D* h3 = new TH1D("h3","Histogram rozkladu prawdopodobienstwa",100,xmin,xmax);
-  
-  //TF1* gauss;
   
   for (int ii=0; ii< 100000; ii++){
       Double_t suma = 0.;
@@ -79,7 +61,6 @@ void lab7_2(){
   h3->Sumw2();
   h3->Fit("gaus");
   h3->Draw();
-  //TF1 f2 = h2->GetFunction("gaus");
   
   
   // D)
@@ -88,11 +69,7 @@ void lab7_2(){
   Double_t xmin = 0.;
   Double_t xmax = 10.;
   
-  //c1->SetLogy();
-  
   TH1D* h4 = new TH1D("h4","Histogram rozkladu prawdopodobienstwa",100,xmin,xmax);
-  
-  //TF1* gauss;
   
   for (int ii=0; ii< 100000; ii++){
       Double_t suma = 0.;
@@ -103,11 +80,10 @@ void lab7_2(){
   }
   h4->Sumw2();
   h4->Fit("gaus");
-  TF1 func;
+  TF1 func*;
   func = h4->GetFunction("gaus");
   
   h4->Draw();
-  func.Draw("same");
+  func->Draw("same");
   
-  //cout<<"Chisq/ndf: "<<func.GetChisquare()/func.GetNDF()<<endl;
 }

@@ -1,7 +1,7 @@
 #include <TF1.h>
 #include <math.h>
 
-#define M_PI 3.14159265358979312
+//#define M_PI 3.14159265358979312
 
 void func_plotting(){
   TF1* f1 = new TF1("f2","[0]*sin(x)/x",-5*M_PI,5*M_PI);
@@ -9,3 +9,11 @@ void func_plotting(){
   f1->SetParameter(1,1);
   f1->Draw();
 }
+
+# ifndef __CINT__
+int main() {
+  
+  func_plotting();
+  return 0;
+}
+# endif

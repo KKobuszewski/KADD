@@ -201,7 +201,7 @@ Double_t linear_lsq_polynomial_fit(
   error_vec = c_vec - eta_vec;
   Double_t residual_sum = 0.;
   residual_sum = (Double_t) TMatrixD(error_vec,TMatrixD::kTransposeMult,TMatrixD(Gy_mat,TMatrixD::kMult,error_vec)) (0,0);
-  TMatrixD(error_vec,TMatrixD::kTransposeMult,TMatrixD(Gy_mat,TMatrixD::kMult,error_vec)).Print();
+  TMatrixD(error_vec,TMatrixD::kTransposeMult,TMatrixD(Gy_mat,TMatrixD::kMult,error_vec));//.Print();
   
   cout<<"Fitted coefficients"<<endl;
   for (int jj = 0; jj <= r; jj++){
@@ -257,14 +257,14 @@ Double_t linear_lsq_fit(
       A_mat(jj,ii) = (*base_func_arr[ii])(t_vec[jj]);
     }
   }  
-  A_mat.Print();
+  //A_mat.Print();
   
   // vector of results
   TMatrixD c_vec(n,1);
   for (int ii=0; ii<n; ii++){
     c_vec(ii,0) = y_vec[ii];
   }
-  c_vec.Print();
+  //c_vec.Print();
   
   
   // Matrices of stdev and variancy
