@@ -37,13 +37,13 @@ void lab7_1(){
     //gauss = new TF1("gauss",fitf,xmin,xmax,3);
     //gauss->SetParameters(h1->GetMaximum(),h1->GetMean(),h1->GetRMS());
     //gauss->SetParNames("Constant","Mean_value","Sigma");
-    h1->Fit("gaus","+");
+    h1->Fit("gaus");
     f1 = h1->GetFunction("gaus");
     
     h1->GetXaxis()->SetTitle("x");
     h1->GetYaxis()->SetTitle("ilosc zliczen w histogramie");
     h1->Draw();
-    f1->Draw("same");
+    //f1->Draw("same");
     
     chi2 = f1->GetChisquare();
     ndf = f1->GetNDF();
