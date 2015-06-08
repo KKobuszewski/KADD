@@ -11,7 +11,7 @@
 //    Root > minuit->mnhelp("SET") explains most parameters
 //Author: Rene Brun
 
-//#include <TMinuit.h>
+#include <TMinuit.h>
 
 Float_t z[5],x[5],y[5],errorz[5];
 
